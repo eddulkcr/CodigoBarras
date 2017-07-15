@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'codigo de Barrass';
+  elementType : 'url' | 'canvas' | 'img' = 'url';
+  value : string = 'Techiediaries';
 }
