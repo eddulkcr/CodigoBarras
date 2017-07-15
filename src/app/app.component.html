@@ -1,9 +1,12 @@
 <!--The whole content below can be removed with the new code.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{title}}!!
+    {{title}}!!
   </h1>
- <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="value">
+ <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="parentInput.value">{{value}}
  </ngx-qrcode>
+ <input type="text" value="codigo123" name="codigo" #parentInput (Keyup) ="0"/>
+ <ngx-barcode [bc-value]="parentInput.value" [bc-display-value]="true">{{value}}</ngx-barcode>
+<p>{{value}}</p>
 </div>
 
