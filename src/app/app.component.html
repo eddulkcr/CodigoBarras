@@ -1,12 +1,16 @@
-<!--The whole content below can be removed with the new code.-->
 <div style="text-align:center">
   <h1>
     {{title}}!!
   </h1>
  <ngx-qrcode [qrc-element-type]="elementType" [qrc-value]="parentInput.value">{{value}}
  </ngx-qrcode>
- <input type="text" value="codigo123" name="codigo" #parentInput (Keyup) ="0"/>
- <ngx-barcode [bc-value]="parentInput.value" [bc-display-value]="true">{{value}}</ngx-barcode>
-<p>{{value}}</p>
+ <input type="text" [(ngModel)]="value" name="codigo" #parentInput (Keyup) ="0"/>
+ <ngx-barcode [bc-value]="parentInput.value" id="codBar" [bc-display-value]="true">{{value}}</ngx-barcode>
+
 </div>
 
+
+<div class="col-sm-6">
+    <button type="button" class="btn btn-default center-block" (click)="imprSelec('codBar')">
+    <span class="glyphicon glyphicon-print"></span>      Imprimir Código Barras</button>
+</div>
